@@ -1,0 +1,52 @@
+body{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-container{
+    background-color: aliceblue;
+    text-align: center;
+    padding: 15px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px black;
+    width: 300px;
+}
+
+.input-group{
+    margin-bottom: 15px;
+}
+
+.input-group input{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    width: 100%;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.input-group input::placeholder{
+    color: black;
+}
+
+button{
+    background-color: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: aliceblue;
+    width: 100px;
+    height: 30px;
+    border: none;
+    border-radius: 20px;
+    border-color: red;
+    cursor: pointer;
+    display: inline-block;
+}
+
+button:hover{
+    background-color: red;
+}
