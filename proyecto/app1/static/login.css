@@ -21,7 +21,7 @@ body{
 
 .input-group input{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: white;
+    color: black;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 20px;
@@ -31,16 +31,16 @@ body{
 }
 
 .input-group input::placeholder{
-    color: black;
+    color: gray;
 }
 
 button{
-    background-color: black;
+    background-color: white;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: aliceblue;
+    color: black;
     width: 100px;
     height: 30px;
-    border: none;
+    border: 10px;
     border-radius: 20px;
     border-color: red;
     cursor: pointer;
