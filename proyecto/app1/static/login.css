@@ -40,9 +40,8 @@ button{
     color: black;
     width: 100px;
     height: 30px;
-    border: 10px;
     border-radius: 20px;
-    border-color: red;
+    border: 2px solid black;
     cursor: pointer;
     display: inline-block;
 }
