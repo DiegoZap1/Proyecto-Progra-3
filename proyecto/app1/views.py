@@ -15,5 +15,11 @@ def inicio(request):
 def catalogo(request):
     return render(request, 'catalogo.html')
 
+def carrito(request):
+    return render(request, 'carrito.html')
+
 def cuenta(request):
     return render(request, 'cuenta.html')
+
+def registro(request):
+    return render(request, 'registro_usuario.html')

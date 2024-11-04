@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilos/login_css.css">
-    <link rel="icon" href="{%static 'logo.jpeg'%}">
     <title>Login</title>
 </head>
 <body>
@@ -16,8 +15,8 @@
             <div class="input-group">
                 <input type="password" name="password" placeholder="Contraseña" required>
             </div>
-            <button type="submit">Iniciar</button>
-            <button type="submit">Registrarse</button>
+            <button type="submit"><a href="{%url 'inicio'%}">Iniciar</a></button>
+            <button type="submit"><a href="{%url 'registro'%}">Registrarse</a></button>
         </form>
     </div>
 </body>
