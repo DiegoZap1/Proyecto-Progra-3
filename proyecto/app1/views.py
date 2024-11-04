@@ -22,4 +22,4 @@ def cuenta(request):
     return render(request, 'cuenta.html')
 
 def registro(request):
-    return render(request, 'registro_usuario.html')
+    return render(request, 'registro.html')
