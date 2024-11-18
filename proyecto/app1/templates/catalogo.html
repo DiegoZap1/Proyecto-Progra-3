@@ -2,50 +2,20 @@
 {%load static%}
 {%block title%} Catalogo {%endblock%}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catalogo</title>
-</head>
-<body>
-    {%block contenido%}
-        <h1>Catalogo</h1>
-        <!-- Sección de catálogo -->
-    <main>
-        <section id="catalogo">
-            <h2>Catálogo de Productos</h2>
-            <p>Explora nuestra variedad de productos para tu bienestar.</p>
-
-            <!-- Lista de productos -->
-            <div class="producto">
-                <h3>Paracetamol 500mg</h3>
-                <p>Alivia dolores y reduce la fiebre.</p>
-                <p><strong>Precio:</strong> $10.00</p>
-                <a href="/productos/1" class="detalle">Ver detalles</a>
-                <button>Agregar al carrito</button>
+{%block contenido%}
+    <link rel="stylesheet" href="{%static 'paginas/cards.css'%}">
+    <div class="card-container">
+        {%for producto in productos%}
+            <div class="card">
+                <a href="{%url 'producto' producto.id%}">
+                    <img src="{{producto.imagen.url}}" alt="{{producto.nombre}}">
+                </a>
+                <div class="card-content">
+                    <h3>{{producto.nombre}}</h3>
+                    <p>${{producto.precio}}</p>
+                    <a href="{%url 'producto' producto.id%}" class="btn">Ver Más</a>
+                </div>
             </div>
-
-            <div class="producto">
-                <h3>Ibuprofeno 200mg</h3>
-                <p>Antiinflamatorio y analgésico para reducir el dolor.</p>
-                <p><strong>Precio:</strong> $15.00</p>
-                <a href="/productos/2" class="detalle">Ver detalles</a>
-                <button>Agregar al carrito</button>
-            </div>
-
-            <div class="producto">
-                <h3>Vitamina C 500mg</h3>
-                <p>Complemento para fortalecer el sistema inmune.</p>
-                <p><strong>Precio:</strong> $12.00</p>
-                <a href="/productos/3" class="detalle">Ver detalles</a>
-                <button>Agregar al carrito</button>
-            </div>
-
-            <!-- Agrega más productos según sea necesario -->
-        </section>
-    </main>
-    {%endblock%}
-</body>
-</html>
+        {%endfor%}
+    </div>
+{%endblock%}

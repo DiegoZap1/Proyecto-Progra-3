@@ -2,48 +2,38 @@
 {%load static%}
 {%block title%} Cuenta {%endblock%}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    {%block contenido%}
-        <h1>Cuenta</h1>
+{%block contenido%}
+        
+    <link rel="stylesheet" href="{%static 'paginas/cuenta.css'%}">
+    <div class="body">
+        <div class="cuenta-container">
+            <h1>Cuenta</h1>
+            <div class="informacion-cuenta">
+                <h2>Información de la Cuenta</h2>
+                <p><strong>Nombre:</strong> Juan Pérez</p>
+                <p><strong>Email:</strong> juan.perez@example.com</p>
+                <p><strong>Teléfono:</strong> +503 7456-7890</p>
+                <a href="/editar-cuenta">Editar Información</a>
+            </div>
 
-        <!-- Sección de cuenta -->
-    <main>
-        <section id="informacion-cuenta">
-            <h2>Información de la Cuenta</h2>
-            <p><strong>Nombre:</strong> Juan Pérez</p>
-            <p><strong>Email:</strong> juan.perez@example.com</p>
-            <p><strong>Teléfono:</strong> +503 7456-7890</p>
-            <a href="/editar-cuenta">Editar Información</a>
-        </section>
+            <!-- Historial de pedidos -->
+            <div class="historial-pedidos">
+                <h2>Historial de Pedidos</h2>
+                <ul>
+                    <li>Pedido #12345 - 20 de Octubre, 2024 - Entregado</li>
+                    <li>Pedido #12344 - 15 de Octubre, 2024 - Entregado</li>
+                    <li>Pedido #12343 - 10 de Octubre, 2024 - Cancelado</li>
+                    <!-- Puedes agregar más pedidos aquí -->
+                </ul>
+            </div>
 
-        <!-- Historial de pedidos -->
-        <section id="historial-pedidos">
-            <h2>Historial de Pedidos</h2>
-            <ul>
-                <li>Pedido #12345 - 20 de Octubre, 2024 - Entregado</li>
-                <li>Pedido #12344 - 15 de Octubre, 2024 - Entregado</li>
-                <li>Pedido #12343 - 10 de Octubre, 2024 - Cancelado</li>
-                <!-- Puedes agregar más pedidos aquí -->
-            </ul>
-        </section>
-
-        <!-- Configuración de cuenta -->
-        <section id="configuracion">
-            <h2>Configuración</h2>
-            <ul>
-                <li><a href="/cambiar-contraseña">Cambiar Contraseña</a></li>
-                <li><a href="/eliminar-cuenta">Eliminar Cuenta</a></li>
-                <li><a href="/notificaciones">Configuración de Notificaciones</a></li>
-            </ul>
-        </section>
-    </main>
-    {%endblock%}
-</body>
-</html>
+            <!-- Configuración de cuenta -->
+            <div class="configuracion">
+                <h2>Configuración</h2>
+                <ul>
+                    <li><a href="{%url 'login'%}"><button>Cerrar Sesion</button></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+{%endblock%}

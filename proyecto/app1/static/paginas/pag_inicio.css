@@ -1,0 +1,77 @@
+h2 {
+    text-align: center;
+    color: white;
+    margin-bottom: 15px;
+}
+
+section {
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+/* Estilo de la sección de bienvenida */
+.marco {
+    background-color: red;
+    text-align: center;
+}
+
+.bienvenida {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.txtBienvenida {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Sección de servicios y productos */
+#servicios, #productos {
+    background-color: #f8f9fa;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    padding: 8px;
+    margin: 5px 0;
+    background-color: red;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 16px;
+}
+
+/* Estilo de la sección de contacto */
+#contacto p {
+    margin: 5px 0;
+    text-align: center;
+    font-size: 16px;
+}
+
+/* Sección de ubicación */
+#ubicacion p {
+    text-align: center;
+    font-size: 16px;
+}
+
+/* Pie de página */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: red;
+    color: #ffffff;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+footer p {
+    margin: 0;
+}

@@ -1,0 +1,36 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: red;
+}
+
+.navbar-brand {
+    color: #fff;
+    text-decoration: none;
+}
+
+.navbar-links a:hover{
+    background-color: #fff;
+    color: black;
+    border-radius: 8px;
+    box-shadow: 0 0 10px white;
+}
+
+
+.navbar-toggle {
+    display: block;
+    color: #fff;
+    box-shadow: 0 0 10px white;
+}
+
+.navbar-toggle {
+   display: none;
+}

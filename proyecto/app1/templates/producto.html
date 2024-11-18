@@ -1,0 +1,23 @@
+{%extends 'navbar.html'%}
+{%load static%}
+
+{%block contenido%}
+    <link rel="stylesheet" href="{%static 'paginas/producto.css'%}">
+    <div class="">
+        <div class="producto-card">
+            <a href="{% url 'producto' producto.id %}">
+                <img src="{{ producto.imagen.url }}" alt="{{ producto.nombre }}" class="producto-card-img">
+            </a>
+            <div class="producto-card-content">
+                <h3>{{ producto.nombre }}</h3>
+                <p class="descripcion">{{producto.descripcion}}</p>
+                <p class="producto-precio">${{ producto.precio }}</p>
+                <form action="{% url 'producto' producto.id %}" method="POST">
+                    {%csrf_token%}
+                    <button type="submit" class="producto-btn">Agregar al carrito</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+{%endblock%}

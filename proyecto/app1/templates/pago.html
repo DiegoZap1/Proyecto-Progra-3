@@ -1,0 +1,28 @@
+{%extends 'navbar.html'%}
+{%load static%}
+
+{%block contenido%}
+
+    <link rel="stylesheet" href="{%static 'paginas/pago.css'%}">
+    <div class="body">
+        <div class="pago-container">
+            <h1>Pago</h1>
+            <form action="">
+                {%csrf_token%}
+                <div class="input-group">
+                    <input type="text" required placeholder="Nombre del titular">
+                </div>
+                <div class="input-group">
+                    <input type="text" required placeholder="Numero de tarjeta">
+                </div>
+                <div class="input-group">
+                    <input type="text" required placeholder="Fecha de vencimiento">
+                    <input type="text" required placeholder="CVV">
+                </div>
+                <div>
+                    <button class="boton-pago"><img src="{%static 'imagenes/pago.png'%}" height="20"> PAGAR</button>
+                </div>
+            </form>
+        </div>
+    </div>
+{%endblock%}

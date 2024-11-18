@@ -5,19 +5,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{%static 'login.css'%}">
+    <link rel="stylesheet" href="{%static 'paginas/registro.css'%}">
     <title>Registro de usuario</title>
 </head>
 <body>
     {%block contenido%}
-    <div class="login-container">
+    <div class="register-container">
         <h1>Registro</h1>
-        <form action="login">
+        <form action="{% url 'registro' %}" method="POST">
+            {% csrf_token %}
             <div class="input-group">
-                <input type="name" name="nombre" placeholder="Nombre" required>
-            </div>
-            <div class="input-group">
-                <input type="last-name" name="apellido" placeholder="Apellido" required>
+                <input type="text" name="nombre" placeholder="Nombre Completo" required>
             </div>
             <div class="input-group">
                 <input type="email" name="email" placeholder="Email" required>
@@ -25,10 +23,7 @@
             <div class="input-group">
                 <input type="password" name="password" placeholder="Contraseña" required>
             </div>
-            <div class="input-group">
-                <input type="password" name="password" placeholder="Confirmar contraseña" required>
-            </div>
-            <button type="submit"><a href="{%url 'inicio'%}">Registrarse</a></button>
+            <button type="submit">Registrarse</button>
         </form>
     </div>
     {%endblock%}

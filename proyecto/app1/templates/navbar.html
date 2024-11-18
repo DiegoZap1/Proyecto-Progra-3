@@ -5,20 +5,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{%static 'navbar.css'%}">
-    <link rel="icon" href="{%static 'logo.jpg'%}">
+    <link rel="icon" href="{%static 'imagenes/logo.png'%}">
+    <link rel="stylesheet" href="{%static 'paginas/stylenavbar.css'%}">
     <title>Farmacia</title>
 </head>
 <body>
     <nav class="navbar">
         <a class="navbar-brand" href="{%url 'inicio'%}">
-            <img src="{%static 'logo.jpg'%}" alt="" height="40" width="40px">Farmacia SaludPlus
+            <img src="{%static 'imagenes/logo.png'%}" alt="" height="40">Farmacia SaludPlus</h1>
         </a>
         <ul class="navbar-links">
-          <li><a href="{%url 'inicio'%}">Inicio</a></li>
-          <li><a href="{%url 'catalogo'%}">Catalogo</a></li>
-          <li><a href="{%url 'carrito'%}">Carrito</a></li>
-          <li><a href="{%url 'cuenta'%}">Cuenta</a></li>
+          <li><a href="{%url 'inicio'%}" class="nav-btn">Inicio</a></li>
+          <li><a href="{%url 'catalogo'%}" class="nav-btn">Catalogo</a></li>
+          <li><a href="{%url 'carrito'%}"><img src="{%static 'imagenes/cart.png'%}" height="25px"></a></li>
+          <li><a href="{%url 'cuenta'%}"><img src="{%static 'imagenes/account.png'%}" height="25px"></a></li>
         </ul>
       </nav>
     {%block contenido%}
