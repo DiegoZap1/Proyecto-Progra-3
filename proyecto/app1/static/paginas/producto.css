@@ -1,60 +1,61 @@
-.producto-container {
+/* Estilos CSS para una página de detalles del producto similar a la imagen proporcionada */
+
+.producto-card {
     display: flex;
-    align-items: flex-start;
-    gap: 30px;
+    flex-direction: column;
+    align-items: center;
     padding: 20px;
-    max-width: 1200px;
+    max-width: 800px;
     margin: 0 auto;
     background-color: #f9f9f9;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.producto-imagen {
-    flex: 1;
-    max-width: 600px;
-}
-
 .producto-card-img {
     width: 100%;
+    max-width: 400px;
     border-radius: 10px;
+    margin-bottom: 20px;
 }
 
-.producto-detalles {
-    flex: 2;
+.producto-card-content {
+    text-align: center;
     padding: 10px;
 }
 
-.producto-nombre {
-    font-size: 2.5rem;
-    font-weight: bold;
+.producto-card-content h3 {
+    font-size: 2rem;
     margin-bottom: 10px;
     color: #333;
 }
 
-.producto-descripcion {
-    font-size: 1.1rem;
+.descripcion {
+    font-size: 1.2rem;
     color: #666;
     margin-bottom: 15px;
 }
 
 .producto-precio {
     font-size: 2rem;
-    color: #e67e22;
     margin: 15px 0;
+    color: #28a745;
+    font-weight: bold;
 }
 
 .producto-btn {
+    display: inline-block;
     padding: 10px 20px;
     font-size: 1rem;
     color: #fff;
-    background-color: #28a745;
+    background-color: #007bff;
     border: none;
     border-radius: 5px;
+    text-decoration: none;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
 .producto-btn:hover {
-    background-color: #218838;
+    background-color: #0056b3;
 }
