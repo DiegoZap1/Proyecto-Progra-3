@@ -15,6 +15,7 @@ urlpatterns = [
     path('carrito/',views.carrito, name="carrito"),
     path('producto/<int:producto_id>/',views.producto, name="producto"),
     path('pago/',views.pago, name='pago'),
+    path('historial_compras/', views.historial_compras, name='historial_compras'),
 ]
 
 if settings.DEBUG:

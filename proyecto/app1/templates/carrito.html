@@ -27,9 +27,11 @@
 						<td>${{ producto.precio }}</td>
 						<td>${{ producto.total }}</td>
 						<td>
-							<form action="{%url 'eliminar_producto' producto_id%}" method="POST">
+							<form action="{% url 'eliminar_producto' producto_id %}" method="POST">
 								{% csrf_token %}
-								<button type="submit" class="eliminar-btn"><img src="{%static 'imagenes/trash.png'%}" height="20px"> Eliminar</button>
+								<button type="submit" class="eliminar-btn">
+									<img src="{% static 'imagenes/trash.png' %}" height="20px"> Eliminar
+								</button>
 							</form>
 						</td>
 					</tr>
@@ -37,14 +39,18 @@
 			</tbody>
 		</table>
 		{% if not carrito %}
-		<p>El carrito está vacío. ¡Empieza a añadir productos!</p>
+			<p>El carrito está vacío. ¡Empieza a añadir productos!</p>
+		{% endif %}
+		{% if carrito %}
+			<div class="total-carrito">
+				<p><strong>Total del carrito: ${{ total_carrito }}</strong></p>
+			</div>
 		{% endif %}
 		<div class="boton-pago-container">
 			<a href="{% url 'pago' %}">
-				<button class="boton-pago"><img src="{%static 'imagenes/pago.png'%}" height="20"> PAGAR</button>
+				<button class="boton-pago"><img src="{% static 'imagenes/pago.png' %}" height="20"> PAGAR</button>
 			</a>
-		</div>		
+		</div>
 	</div>
-	
     
 {%endblock%}

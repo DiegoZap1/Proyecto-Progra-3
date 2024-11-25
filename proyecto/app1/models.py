@@ -15,14 +15,8 @@ class Producto(models.Model):
 
 # Modelo para las ventas
 class Venta(models.Model):
-    producto = models.ForeignKey(Producto, on_delete=models.CASCADE)
-    cantidad = models.PositiveIntegerField()
-    precio = models.DecimalField(max_digits=10, decimal_places=2)
-    subtotal = models.DecimalField(max_digits=10, decimal_places=2, editable=False)
-    total = models.DecimalField(max_digits=10, decimal_places=2, editable=False)
-
-# Modelo para el historial de compras
-class HistorialCompra(models.Model):
     usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
-    venta = models.ForeignKey(Venta, on_delete=models.CASCADE)
+    producto = models.ForeignKey('Producto', on_delete=models.CASCADE)
+    cantidad = models.PositiveIntegerField()
+    total = models.DecimalField(max_digits=10, decimal_places=2)
     fecha = models.DateTimeField(auto_now_add=True)

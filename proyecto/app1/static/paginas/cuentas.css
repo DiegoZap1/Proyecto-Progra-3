@@ -1,0 +1,88 @@
+/* Estilos generales */
+.body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo de la cuenta-container */
+.cuenta-container {
+    max-width: 800px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Títulos principales */
+h1 {
+    color: #e74c3c; /* Rojo */
+    text-align: center;
+    font-size: 36px;
+}
+
+h2 {
+    color: #e74c3c; /* Rojo */
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+/* Estilo de la información de la cuenta */
+.informacion-cuenta p {
+    font-size: 18px;
+    color: #555;
+    margin: 10px 0;
+}
+
+.informacion-cuenta strong {
+    color: #e74c3c; /* Rojo */
+}
+
+/* Estilo del historial de pedidos */
+.historial-pedidos ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.historial-pedidos .btn-historial {
+    display: inline-block;
+    background-color: #e74c3c; /* Rojo */
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.historial-pedidos .btn-historial:hover {
+    background-color: #c0392b; /* Rojo oscuro */
+}
+
+/* Estilo de la configuración */
+.configuracion ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.configuracion .cerrar-sesion {
+    background-color: #e74c3c; /* Rojo */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.configuracion .cerrar-sesion button:hover {
+    background-color: #c0392b; /* Rojo oscuro */
+}
+
+/* Estilo para los enlaces dentro de los botones */
+a {
+    text-decoration: none;
+}

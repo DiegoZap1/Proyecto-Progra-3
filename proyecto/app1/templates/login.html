@@ -1,30 +1,23 @@
+{%extends 'navbar.html'%}
 {%load static%}
+{%block title%}Login{%endblock%}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{%static 'paginas/login.css'%}">
-    <link rel="icon" href="{%static 'paginas/logo.png'%}'">
-    <title>Login</title>
-</head>
-<body>
-    {%block contenido%}
-    <div class="login-container">
-        <h1>Inicio de sesión</h1>
-        <form action="{% url 'login' %}" method="POST">
-            {% csrf_token %}
-            <div class="input-group">
-                <input type="email" name="email" placeholder="Email" required>
-            </div>
-            <div class="input-group">
-                <input type="password" name="password" placeholder="Contraseña" required>
-            </div>
-            <button type="submit">Iniciar</button>
-            <a href="{%url 'registro'%}"><button type="button">Registrarse</button></a>
-        </form>
+{%block contenido%}
+    <link rel="stylesheet" href="{%static 'paginas/logins.css'%}">
+    <div class="body">
+        <div class="login-container">
+            <h1>Inicio de sesión</h1>
+            <form action="{% url 'login' %}" method="POST">
+                {% csrf_token %}
+                <div class="input-group">
+                    <input type="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" name="password" placeholder="Contraseña" required>
+                </div>
+                <button type="submit">Iniciar</button>
+                <a href="{%url 'registro'%}"><button type="button">Registrarse</button></a>
+            </form>
+        </div>
     </div>
-    {%endblock%}
-</body>
-</html>
+{%endblock%}

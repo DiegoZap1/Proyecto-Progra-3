@@ -59,3 +59,13 @@
 .producto-btn:hover {
     background-color: #0056b3;
 }
+
+.cantidad-producto input{
+    display: inline-block;
+    background-color: white;
+    color: red;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+}

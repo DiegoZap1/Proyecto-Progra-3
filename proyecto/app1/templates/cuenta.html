@@ -4,26 +4,21 @@
 
 {%block contenido%}
         
-    <link rel="stylesheet" href="{%static 'paginas/cuenta.css'%}">
+    <link rel="stylesheet" href="{%static 'paginas/cuentas.css'%}">
     <div class="body">
         <div class="cuenta-container">
             <h1>Cuenta</h1>
             <div class="informacion-cuenta">
                 <h2>Información de la Cuenta</h2>
-                <p><strong>Nombre:</strong> Juan Pérez</p>
-                <p><strong>Email:</strong> juan.perez@example.com</p>
-                <p><strong>Teléfono:</strong> +503 7456-7890</p>
-                <a href="/editar-cuenta">Editar Información</a>
+                <p><strong>Nombre:</strong> {{usuario.nombre_completo}}</p>
+                <p><strong>Email:</strong> {{usuario.email}}</p>
             </div>
 
             <!-- Historial de pedidos -->
             <div class="historial-pedidos">
                 <h2>Historial de Pedidos</h2>
                 <ul>
-                    <li>Pedido #12345 - 20 de Octubre, 2024 - Entregado</li>
-                    <li>Pedido #12344 - 15 de Octubre, 2024 - Entregado</li>
-                    <li>Pedido #12343 - 10 de Octubre, 2024 - Cancelado</li>
-                    <!-- Puedes agregar más pedidos aquí -->
+                    <a href="{%url 'historial_compras'%}" class="btn-historial">Ir a historial de compras</a>
                 </ul>
             </div>
 
@@ -31,7 +26,7 @@
             <div class="configuracion">
                 <h2>Configuración</h2>
                 <ul>
-                    <li><a href="{%url 'login'%}"><button>Cerrar Sesion</button></a></li>
+                    <li><a href="{%url 'login'%}" class="cerrar-sesion">Cerrar Sesion</a></li>
                 </ul>
             </div>
         </div>
