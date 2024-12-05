@@ -36,20 +36,23 @@
     color: gray;
 }
 
-button {
+.boton-pago {
     background-color: white;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 20px;
     color: black;
-    border-radius: 20px;
-    border: none;
-    cursor: pointer;
+    text-align: center;
     display: inline-block;
+    font-size: 20px;
+    border: none;
+    border-radius: 8px;
 }
 
-button:hover {
+.boton-pago:hover {
     background-color: red;
     color: white;
-    border: none;
     box-shadow: 0 0 10px red;
+}
+
+.boton-pago img {
+    vertical-align: middle;
+    margin-right: 8px;
 }

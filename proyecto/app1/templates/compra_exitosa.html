@@ -1,0 +1,18 @@
+{%extends 'navbar.html'%}
+{% load static %}
+
+{%block contenido%}
+
+    <link rel="stylesheet" href="{% static 'paginas/compra_exitosa.css' %}">
+    <div class="container">
+        <div class="mensaje-exito">
+            <h1>¡Compra Procesada con Éxito!</h1>
+            <p>Gracias por tu compra. Tu pedido ha sido procesado correctamente.</p>
+            <div class="opciones">
+                <a href="{% url 'historial_compras' %}" class="boton">Ver Historial de Compras</a>
+                <a href="{% url 'inicio' %}" class="boton">Volver a la Página de Inicio</a>
+            </div>
+        </div>
+    </div>
+
+{%endblock%}

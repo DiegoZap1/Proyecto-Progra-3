@@ -12,9 +12,12 @@ urlpatterns = [
     path('catalogo/',views.catalogo, name="catalogo"),
     path('cuenta/', views.cuenta, name="cuenta"),
     path('carrito/eliminar/<int:producto_id>/', views.eliminar_producto, name='eliminar_producto'),
+    path('carrito/actualizar/<int:producto_id>/', views.actualizar_cantidad, name='actualizar_cantidad'),
     path('carrito/',views.carrito, name="carrito"),
     path('producto/<int:producto_id>/',views.producto, name="producto"),
+    path('direccionEnvio/',views.direccionEnvio, name='direccionEnvio'),
     path('pago/',views.pago, name='pago'),
+    path('compra_exitosa/', views.compra_exitosa, name='compra_exitosa'),
     path('historial_compras/', views.historial_compras, name='historial_compras'),
 ]
 

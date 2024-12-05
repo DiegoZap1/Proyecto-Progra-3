@@ -4,7 +4,7 @@
 
 {%block contenido%}
 
-	<link rel="stylesheet" href="{%static 'paginas/carrito.css'%}">
+	<link rel="stylesheet" href="{%static 'paginas/ccarrito.css'%}">
 	<div class="container">
 		<h1>Carrito</h1>
 		<table class="table">
@@ -23,7 +23,12 @@
 					<tr class="producto-row">
 						<td>{{ forloop.counter }}</td>
 						<td>{{ producto.nombre }}</td>
-						<td>{{ producto.cantidad }}</td>
+						<td>
+							<form action="{% url 'actualizar_cantidad' producto_id %}" method="POST">
+								{% csrf_token %}
+								<input type="number" name="cantidad" value="{{ producto.cantidad }}" min="1" class="cantidad-input" onchange="this.form.submit()">
+							</form>
+						</td>
 						<td>${{ producto.precio }}</td>
 						<td>${{ producto.total }}</td>
 						<td>

@@ -1,9 +1,9 @@
-{%extends 'navbar.html'%}
-{%load static%}
-{%block title%}Historial de Compras{%endblock%}
+{% extends 'navbar.html' %}
+{% load static %}
 
-{%block contenido%}
+{% block title %}Historial de Compras{% endblock %}
 
+{% block contenido %}
     <link rel="stylesheet" href="{% static 'paginas/historialCompras.css' %}">
 
     <div class="container">
@@ -18,7 +18,7 @@
                                 <th>Producto</th>
                                 <th>Cantidad</th>
                                 <th>Precio</th>
-                                <th>Total</th>
+                                <th>Subtotal</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -26,18 +26,17 @@
                                 <tr>
                                     <td>{{ compra.producto.nombre }}</td>
                                     <td>{{ compra.cantidad }}</td>
-                                    <td>${{ compra.total }}</td>
+                                    <td>${{ compra.producto.precio }}</td>
                                     <td>${{ compra.total }}</td>
                                 </tr>
                             {% endfor %}
                         </tbody>
                     </table>
-                    <p><strong>Total del día: ${{ compras.total }}</strong></p>
+                    <p><strong>Total del día: ${{ totales_por_dia }}</strong></p>
                 </div>
             {% endfor %}
         {% else %}
             <p>No has realizado compras aún.</p>
         {% endif %}
     </div>
-
-{%endblock%}
+{% endblock %}

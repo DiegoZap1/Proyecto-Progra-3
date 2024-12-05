@@ -84,3 +84,12 @@ p {
 .total-carrito p{
     color: red;
 }
+
+.cantidad-input {
+    width: 60px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 4px;
+    font-size: 14px;
+}
