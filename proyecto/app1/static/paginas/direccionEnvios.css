@@ -1,10 +1,9 @@
-/* direccionEnvio.css */
-
-body {
-    font-family: Arial, sans-serif;
+.body {
+    font-family: 'Arial', sans-serif;
     background-color: #f8f8f8;
     color: #333;
     padding: 20px;
+    margin: 0;
 }
 
 .container {
@@ -13,13 +12,14 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     max-width: 600px;
-    margin: 0 auto;
+    margin: 40px auto;
 }
 
 h1 {
     text-align: center;
     color: #d9534f;
     margin-bottom: 20px;
+    font-size: 24px;
 }
 
 .form-group {
@@ -31,6 +31,7 @@ label {
     color: #d9534f;
     display: block;
     margin-bottom: 8px;
+    font-size: 14px;
 }
 
 .form-control {
@@ -46,6 +47,7 @@ label {
 .form-control:focus {
     border-color: #d9534f;
     box-shadow: 0 0 5px rgba(217, 83, 79, 0.5);
+    outline: none;
 }
 
 textarea {
@@ -59,17 +61,13 @@ textarea {
     color: white;
     padding: 15px 30px;
     font-size: 16px;
+    border: none;
     border-radius: 5px;
     width: 100%;
-    text-decoration: none;
     cursor: pointer;
 }
 
 .btn-submit:hover {
     background-color: #c9302c;
     transition: background-color 0.3s ease;
-}
-
-a:focus {
-    outline: none;
 }

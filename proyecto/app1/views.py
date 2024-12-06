@@ -122,7 +122,7 @@ def pago(request):
 
         request.session['carrito'] = {}
 
-        return redirect('inicio')
+        return redirect('compra_exitosa')
 
     return render(request, 'pago.html')
 
@@ -137,7 +137,7 @@ def historial_compras(request):
     usuario = models.Usuario.objects.get(id=usuario_id)
     compras = models.Venta.objects.filter(usuario=usuario).order_by('-fecha')
 
-    # Agrupar compras por día y calcular el total
+
     compras_agrupadas = {}
     totales_por_dia = {}
 
@@ -146,12 +146,20 @@ def historial_compras(request):
         
         if fecha_formateada not in compras_agrupadas:
             compras_agrupadas[fecha_formateada] = []
-            totales_por_dia[fecha_formateada] = Decimal('0.00')  # Asegúrate de que el total sea un Decimal
+            totales_por_dia[fecha_formateada] = Decimal('0.00')
 
         compras_agrupadas[fecha_formateada].append(compra)
-        totales_por_dia[fecha_formateada] += compra.total  # Acumulamos el total de cada compra
+        totales_por_dia[fecha_formateada] += compra.total
+
+    compras_agrupadas_lista = [
+        {
+            'fecha': fecha,
+            'compras': compras_agrupadas[fecha],
+            'total': totales_por_dia[fecha]
+        }
+        for fecha in compras_agrupadas
+    ]
 
     return render(request, 'historialCompras.html', {
-        'comprass': compras_agrupadas,
-        'totales_por_dia': totales_por_dia
+        'compras_agrupadas': compras_agrupadas_lista
     })

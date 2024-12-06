@@ -4,39 +4,39 @@
 {% block title %}Historial de Compras{% endblock %}
 
 {% block contenido %}
-    <link rel="stylesheet" href="{% static 'paginas/historialCompras.css' %}">
+<link rel="stylesheet" href="{% static 'paginas/historialCompras.css' %}">
 
-    <div class="container">
-        <h1>Historial de Compras</h1>
-        {% if comprass %}
-            {% for fecha, compras in comprass.items %}
-                <div class="compras-dia">
-                    <h2>{{ fecha }}</h2>
-                    <table class="table">
-                        <thead>
+<div class="container">
+    <h1>Historial de Compras</h1>
+    {% if compras_agrupadas %}
+        {% for dia in compras_agrupadas %}
+            <div class="compras-dia">
+                <h2>{{ dia.fecha }}</h2>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Producto</th>
+                            <th>Cantidad</th>
+                            <th>Precio</th>
+                            <th>Subtotal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for compra in dia.compras %}
                             <tr>
-                                <th>Producto</th>
-                                <th>Cantidad</th>
-                                <th>Precio</th>
-                                <th>Subtotal</th>
+                                <td>{{ compra.producto.nombre }}</td>
+                                <td>{{ compra.cantidad }}</td>
+                                <td>${{ compra.producto.precio }}</td>
+                                <td>${{ compra.total }}</td>
                             </tr>
-                        </thead>
-                        <tbody>
-                            {% for compra in compras %}
-                                <tr>
-                                    <td>{{ compra.producto.nombre }}</td>
-                                    <td>{{ compra.cantidad }}</td>
-                                    <td>${{ compra.producto.precio }}</td>
-                                    <td>${{ compra.total }}</td>
-                                </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
-                    <p><strong>Total del día: ${{ totales_por_dia }}</strong></p>
-                </div>
-            {% endfor %}
-        {% else %}
-            <p>No has realizado compras aún.</p>
-        {% endif %}
-    </div>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                <p><strong>Total del día: ${{ dia.total }}</strong></p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>No has realizado compras aún.</p>
+    {% endif %}
+</div>
 {% endblock %}
